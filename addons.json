@@ -1,16 +1,12 @@
-{
-  "api_version": 1,
-  "status": "success",
-  "data": [
-    {
-      "id": 101,
-      "title": "Smart Villagers",
-      "description": "تطوير ذكاء وقدرات القرويين في ماينكرافت",
-      "thumb": "https://seidserbeh.github.io/paradise-of-mods/pack_icon.png",
-      "file_url": "https://www.mediafire.com/file/xg4s635mkrulrdt/§2SMART+§9VILLAGERS.mcaddon/file",
-      "category": "McPack",
-      "author": "Paradise Mods",
-      "stars": 5
-    }
-  ]
-}
+[
+  {
+    "id": "1001",
+    "title": "Smart Villagers",
+    "desc": "تطوير ذكاء القرويين بشكل كامل",
+    "thumb": "https://seidserbeh.github.io/paradise-of-mods/pack_icon.png",
+    "direct_link": "https://www.mediafire.com/file/xg4s635mkrulrdt/%C2%A72SMART+%C2%A79VILLAGERS.mcaddon/file",
+    "category": "McPack",
+    "stars": "5",
+    "downloads": "1.2K"
+  }
+]
