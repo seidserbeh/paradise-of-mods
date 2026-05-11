@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradise of Mods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">×</a>
+        
+        <div class="categories">
+            <span class="filter-btn" onclick="filterMods('all')">الكل</span>
+            <span class="filter-btn" onclick="filterMods('behavior')">Behavior</span>
+            <span class="filter-btn" onclick="filterMods('resource')">Resource</span>
+        </div>
+
+        <a href="#">الرئيسية</a>
+        <a href="#">مودات ماين كرافت</a>
+
+        <div id="contact-section" class="contact-area">
+            <h2>تواصل معي</h2>
+            <p>لديك اقتراح لمود جديد؟ انضم لسيرفر الديسكورد</p>
+            <div class="social-cards">
+                <a href="https://discord.gg/5B4UYrDxNk" target="_blank" class="social-item discord">
+                    <span>Discord Server</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="modSearch" placeholder="ابحث عن مود (مثلاً: Villagers)..." onkeyup="searchMods()">
+        </div>
+
+        <h1>Paradise of Mods</h1>
+        <p class="explore-text">Explore the best mods ever</p>
+
+        <h2 id="mods-title">إصداراتنا من المودات</h2>
+
+        <div class="mods-grid">
+            <div class="mod-card" data-category="behavior">
+                <div class="mod-image">
+                    <img src="pack_icon.png" alt="Smart Villagers">
+                </div>
+                <h3>Smart Villagers</h3>
+                <p class="desc">تطوير ذكاء القرويين وتفاعلهم بشكل واقعي</p>
+                
+                <div class="mod-info">
+                    <div class="info-item"><span>الإصدار</span><strong>1.21.x</strong></div>
+                    <div class="info-item"><span>الحجم</span><strong>2.4 MB</strong></div>
+                    <div class="info-item"><span>النوع</span><strong>Behavior</strong></div>
+                </div>
+
+                <a href="https://www.mediafire.com/file/xg4s635mkrulrdt/§2SMART+§9VILLAGERS.mcaddon/file" class="btn download-btn">Download Now</a>
+            </div>
+            </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2026 Paradise of Mods | Made with ❤️ for Minecrafters</p>
+    </footer>
+
+    <script>
+        // دالة فتح وإغلاق المنيو
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+
+        // دالة البحث الذكي
+        function searchMods() {
+            let input = document.getElementById('modSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('mod-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let titleElement = cards[i].getElementsByTagName('h3')[0];
+                if (titleElement) {
+                    let title = titleElement.innerText.toLowerCase();
+                    cards[i].style.display = title.includes(input) ? "" : "none";
+                }
+            }
+        }
+
+        // دالة الفلترة حسب التصنيف
+        function filterMods(category) {
+            let cards = document.getElementsByClassName('mod-card');
+            for (let i = 0; i < cards.length; i++) {
+                let cardCategory = cards[i].getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+            toggleMenu(); // تغلق المنيو تلقائياً لتعطيك شكل احترافي
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* 1. الخلفية المتحركة (الهيبة) */
+body {
+    background: linear-gradient(45deg, #0f0f0f, #1a1a1a, #0f0f0f);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. المنيو الجانبية والثلاث شرطات */
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: #ff9800;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+/* 1. إصلاح المنيو ومنع التداخل */
+.sidebar {
+    height: 100%;
+    width: 250px; /* عرض ثابت */
+    position: fixed;
+    z-index: 1000; /* عشان تطلع فوق كل شيء */
+    top: 0;
+    right: -250px; /* مخفية في اليمين */
+    background-color: #111;
+    overflow-y: auto; /* يسمح بالسكول داخل المنيو فقط إذا كثرت الروابط */
+    transition: 0.4s ease-in-out;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر تحت بعض */
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+}
+
+.sidebar.active {
+    right: 0; /* تظهر عند الضغط على الزر */
+}
+
+/* 2. ترتيب الروابط داخل المنيو */
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #ddd;
+    display: block;
+    transition: 0.3s;
+    text-align: right;
+    border-bottom: 1px solid #222;
+}
+
+/* 3. إصلاح قسم الفئات (الكل، Behavior...) داخل المنيو */
+.sidebar-categories {
+    display: flex;
+    flex-direction: column; /* أهم تعديل: ترتيب عمودي لمنع الانفعاص */
+    padding: 15px 25px;
+    gap: 10px;
+}
+
+.sidebar-categories span {
+    padding: 10px;
+    background: #222;
+    color: #ff9800;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* 4. حماية الصفحة الرئيسية من الانفعاص */
+.main-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.4s;
+}
+
+/* 5. زر الإغلاق X */
+.closebtn {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 30px;
+    color: #ff9800;
+    cursor: pointer;
+}
+
+
+.mod-card {
+    background-color: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 20px;
+    padding: 25px;
+    width: 85%;
+    max-width: 320px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.mod-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff9800;
+}
+
+.mod-image img { width: 100%; border-radius: 12px; }
+
+h3 { color: #ff9800; }
+
+.download-btn {
+    display: block;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    background-color: #ff9800;
+    color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير اللمعان على الزر */
+.download-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.download-btn:hover::after { left: 100%; }
+.mod-info {
+    display: flex;
+    justify-content: space-between; /* توزيع متساوي */
+    background: rgba(0, 0, 0, 0.3); /* خلفية أغمق قليلاً للتباين */
+    border-radius: 12px;
+    padding: 10px;
+    margin: 15px 0;
+    border: 1px solid #333;
+}
+
+.info-item {
+    flex: 1; /* يعطي مساحة متساوية لكل عنصر */
+    text-align: center;
+}
+
+.info-item span {
+    display: block;
+    font-size: 0.65rem;
+    color: #888;
+    margin-bottom: 3px;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #ff9800;
+}
+ .site-footer {
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    color: #555;
+    font-size: 0.8rem;
+    border-top: 1px solid #222;
+}
+.contact-area {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+    width: 100%;
+}
+
+.social-cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-item {
+    background-color: #5865F2; /* لون الديسكورد الرسمي */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3);
+}
+
+.social-item:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+ /* تأثير دخول العناصر بنعومة */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-content {
+    animation: fadeIn 1s ease-out;
+}
+
+.mod-card {
+    animation: fadeIn 1.2s ease-out;
+}
+.mod-image {
+    width: 100%;
+    min-height: 150px; /* يعطي مساحة للصورة حتى لو لم تحمل */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mod-image img {
+    max-width: 150px; /* حجم أيقونة القروي المناسب */
+    border-radius: 10px;
+}
+ /* تنسيق شريط البحث */
+.search-container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+}
+/* تنسيق شريط البحث المطور */
+.search-container {
+    margin: 25px auto 20px auto; /* زدنا المسافة العلوية لـ 60 عشان ينزل بوضوح */
+    width: 60%;
+    max-width: 350px;
+    position: relative;
+    z-index: 10; /* عشان نضمن إنه ما يتداخل مع أي عنصر ثاني */
+}
+ 
+
+#modSearch {
+    width: 100%;
+    padding: 8px 15px; /* تقليل الحشو الداخلي لجعله أنحف */
+    border-radius: 20px; /* زوايا منحنية بشكل ناعم */
+    border: 1.5px solid rgba(255, 152, 0, 0.5); /* إطار برتقالي خفيف وشفاف */
+    background: rgba(26, 26, 26, 0.8); /* خلفية داكنة ومنسجمة */
+    color: #ddd;
+    font-size: 0.85rem; /* تصغير الخط قليلاً */
+    outline: none;
+    transition: all 0.3s ease;
+    text-align: center; /* جعل نص البحث في المنتصف */
+}
+
+#modSearch:focus {
+    border-color: #ff9800; /* توهج الإطار عند الضغط */
+    box-shadow: 0 0 8px rgba(255, 152, 0, 0.2);
+    background: #1a1a1a;
+}
+.sidebar a {
+    white-space: nowrap; /* يمنع النص من النزول لسطر جديد وتشويه الشكل */
+    display: block;
+    transition: 0.3s;
+    opacity: 0; /* نخفي الروابط وهي مقفلة */
+}
+
+.sidebar.active a {
+    opacity: 1; /* تظهر الروابط فقط عند فتح المنيو */
+}
+ /* تحسين شكل بطاقة المود */
+.mod-card {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* حركة ناعمة جداً */
+    cursor: pointer;
+}
+
+/* تأثير عند مرور الماوس أو الضغط */
+.mod-card:hover {
+    transform: translateY(-8px); /* ترفع البطاقة */
+    border-color: #ff9800; /* يغير لون الحواف للبرتقالي */
+    box-shadow: 0 10px 20px rgba(255, 152, 0, 0.2); /* يعطي توهج خفيف */
+}
+
+/* تحسين زر التحميل */
+.download-btn {
+    background: linear-gradient(45deg, #ff9800, #e65100); /* تدرج لوني فخم */
+    border: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.download-btn:hover {
+    filter: brightness(1.2); /* يخلي الزر يلمع عند اللمس */
+}
