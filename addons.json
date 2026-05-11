@@ -1,0 +1,15 @@
+{
+  "ads_config": {
+    "show_ads": false
+  },
+  "addons": [
+    {
+      "id": "smart_villagers_01",
+      "title": "Smart Villagers",
+      "description": "تطوير ذكاء القرويين وتفاعلهم بشكل واقعي في عالمك",
+      "image_url": "https://seidserbeh.github.io/paradise-of-mods/pack_icon.png",
+      "download_url": "https://www.mediafire.com/file/xg4s635mkrulrdt/%C2%A72SMART+%C2%A79VILLAGERS.mcaddon/file",
+      "category": "McPack"
+    }
+  ]
+}
