@@ -1,12 +1,14 @@
-[
-  {
-    "id": "1001",
-    "title": "Smart Villagers",
-    "desc": "تطوير ذكاء القرويين بشكل كامل",
-    "thumb": "https://seidserbeh.github.io/paradise-of-mods/pack_icon.png",
-    "direct_link": "https://www.mediafire.com/file/xg4s635mkrulrdt/%C2%A72SMART+%C2%A79VILLAGERS.mcaddon/file",
-    "category": "McPack",
-    "stars": "5",
-    "downloads": "1.2K"
-  }
-]
+{
+  "status": "success",
+  "data": [
+    {
+      "id": "1001",
+      "title": "Smart Villagers",
+      "desc": "تطوير ذكاء القرويين بشكل كامل",
+      "thumb": "https://seidserbeh.github.io/paradise-of-mods/pack_icon.png",
+      "direct_link": "https://www.mediafire.com/file/xg4s635mkrulrdt/%C2%A72SMART+%C2%A79VILLAGERS.mcaddon/file",
+      "category": "McPack",
+      "stars": "5"
+    }
+  ]
+}
